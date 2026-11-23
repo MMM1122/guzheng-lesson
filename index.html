@@ -3,7 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>UBC 古筝课</title>
+<title>筝探 · Guzheng with Yvette | UBC 古筝课</title>
+<meta name="description" content="在温哥华 UBC 附近，跟 Yvette 从一根琴弦开始，弹会喜欢的旋律。中英双语古筝教学，提供体验课、一对一、少儿课与小班工作坊。">
+<meta name="theme-color" content="#f6f3eb">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <script>
 /* choose language before first paint: #en / #zh in the link, then the visitor's last choice, then the browser */
 (function(){
@@ -18,204 +21,21 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=ZCOOL+XiaoWei&family=Noto+Sans+SC:wght@400;500;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-/* Layout idea: a dark lacquer band holding a playable 21-string zheng, then a cool rice-paper study page ruled like a score sheet. Every heading carries a subtitle in the other language. */
-:root{
-  --paper:#EEF0EC;
-  --ink:#16191B;
-  --muted:#58615E;
-  --line:#C9D0CC;
-  --accent:#2B6670;      /* 石青 azurite */
-  --lacquer:#1B1512;
-  --on-lacquer:#EDE5D4;
-  --display:"ZCOOL XiaoWei","Songti SC","STSong","Noto Serif SC",serif;
-  --body:"Noto Sans SC",-apple-system,"PingFang SC","Microsoft YaHei",system-ui,sans-serif;
-  --latin:"Cormorant Garamond",Georgia,serif;
-  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
-  color-scheme:light;
-}
-/* language switching */
-html[data-lang="en"] .t-zh{display:none!important}
-html:not([data-lang="en"]) .t-en{display:none!important}
-html[data-lang="en"] .s-en{display:none!important}
-html:not([data-lang="en"]) .s-zh{display:none!important}
-html[data-lang="en"] h1,html[data-lang="en"] h2,html[data-lang="en"] h3{font-family:var(--latin);font-weight:600;letter-spacing:0}
-html[data-lang="en"] .sub{font-family:var(--display);font-style:normal;letter-spacing:.08em}
-
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}
-a{color:var(--accent)}
-:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
-.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
-@media (max-width:420px){.wrap{padding:0 16px}}
-h1,h2,h3{font-family:var(--display);font-weight:400;text-wrap:balance;margin:0}
-.sub{font-family:var(--latin);font-style:italic;font-weight:500;color:var(--muted);font-size:1.15rem;letter-spacing:.01em}
-.todo{background:rgba(43,102,112,.10);border-bottom:1.5px dashed var(--accent);padding:0 .2em;border-radius:2px}
-
-/* ---------- top bar ---------- */
-.top{background:var(--lacquer);color:var(--on-lacquer)}
-.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:16px;padding-bottom:16px;flex-wrap:wrap}
-.brand{font-family:var(--display);font-size:1.35rem;letter-spacing:.08em;color:var(--on-lacquer);text-decoration:none}
-.brand small{font-family:var(--latin);font-style:italic;font-size:1rem;letter-spacing:0;opacity:.7;margin-left:.5em}
-.top-right{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
-.top nav{display:flex;gap:20px;flex-wrap:wrap}
-.top nav a{color:var(--on-lacquer);opacity:.8;text-decoration:none;font-size:.92rem}
-.top nav a:hover{opacity:1;text-decoration:underline;text-underline-offset:4px}
-.lang{display:inline-flex;border:1px solid rgba(237,229,212,.35);border-radius:999px;padding:2px}
-.lang button{font:inherit;font-size:.82rem;background:transparent;color:var(--on-lacquer);border:0;border-radius:999px;padding:.25em .85em;cursor:pointer;opacity:.75}
-.lang button[aria-pressed="true"]{background:var(--on-lacquer);color:var(--lacquer);opacity:1;font-weight:500}
-
-/* ---------- hero ---------- */
-.hero{background:var(--lacquer);color:var(--on-lacquer);padding:8px 0 40px;position:relative;overflow:hidden}
-.hero-grid{display:grid;grid-template-columns:110px 1fr;gap:28px;align-items:stretch}
-.vtitle{writing-mode:vertical-rl;font-family:var(--display);font-size:clamp(44px,5.4vw,68px);line-height:1.15;letter-spacing:.12em;margin:0;justify-self:center;color:var(--on-lacquer)}
-.vtitle .hl{color:#9FC9C9}
-html[data-lang="en"] .hero-grid{grid-template-columns:1fr;gap:10px}
-html[data-lang="en"] .vtitle{writing-mode:horizontal-tb;justify-self:start;font-family:var(--latin);font-weight:500;font-size:clamp(40px,5.6vw,72px);letter-spacing:-.01em;line-height:1.05;padding-top:18px}
-.stage{display:flex;flex-direction:column;gap:14px;min-width:0}
-.hero-lede{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap}
-.hero-lede p{margin:0;max-width:36em;color:#CFC6B5}
-.hero-lede .sub{color:#A99F8D;display:block}
-.wrap.wide{max-width:1400px}
-.stage-wide{margin-top:28px}
-.zheng{position:relative;border-radius:14px;box-shadow:0 30px 60px -30px rgba(0,0,0,.8)}
-canvas#zheng{display:block;width:100%;touch-action:none;cursor:pointer;border-radius:14px}
-.readout{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-family:var(--mono);font-size:.85rem;color:#B9AF9C}
-.readout b{color:var(--on-lacquer);font-weight:500}
-.controls{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
-.btn{font:inherit;font-size:.95rem;border-radius:999px;padding:.55em 1.2em;border:1px solid rgba(237,229,212,.35);background:transparent;color:var(--on-lacquer);cursor:pointer;transition:background .15s,border-color .15s}
-.btn:hover{background:rgba(237,229,212,.08);border-color:rgba(237,229,212,.7)}
-.btn.solid{background:#9FC9C9;color:#102225;border-color:#9FC9C9;font-weight:500;text-decoration:none;white-space:nowrap}
-.btn.solid:hover{background:#B8DADA}
-.jianpu{display:flex;flex-wrap:wrap;gap:2px 0;align-items:flex-start;font-family:var(--mono);font-size:1.25rem;color:#B9AF9C;padding:10px 0 0}
-.jianpu .n{position:relative;display:inline-flex;flex-direction:column;align-items:center;min-width:1.7em;transition:color .1s}
-.jianpu .n small{font-family:var(--body);font-size:.6rem;line-height:1;margin-top:2px;color:#9FC9C9}
-.jianpu .bar{color:#6E6555;min-width:1.2em;text-align:center}
-.jianpu .n.on{color:#fff}
-.jianpu .beam{display:inline-flex;border-bottom:1.5px solid #8A806F;padding-bottom:3px;margin:0 .2em 6px}
-.jianpu .beam .n{min-width:1.15em}
-.jianpu .n.hi::before{content:"";position:absolute;top:-2px;width:4px;height:4px;border-radius:50%;background:currentColor}
-.jianpu .n.dash{color:#6E6555}
-.jianpu .n.on::after{content:"";position:absolute;bottom:-6px;width:60%;height:2px;background:#9FC9C9}
-
-/* ---------- sections ---------- */
-section{padding:72px 0;border-top:1px solid var(--line)}
-section:first-of-type{border-top:0}
-.sec-head{display:grid;grid-template-columns:200px 1fr;gap:24px;margin-bottom:36px;align-items:baseline}
-.sec-head .num{font-family:var(--mono);font-size:.8rem;color:var(--accent);letter-spacing:.08em}
-.sec-head h2{font-size:clamp(28px,3.4vw,40px);line-height:1.25}
-.sec-head .sub{display:block;margin-top:4px}
-@media (max-width:760px){.sec-head{grid-template-columns:1fr;gap:6px}}
-
-/* learn */
-.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:2px solid var(--ink)}
-.fact{padding:22px 24px 26px 0;border-right:1px solid var(--line)}
-.fact+.fact{padding-left:24px}
-.fact:last-child{border-right:0}
-.fact h3{font-size:1.35rem;margin-bottom:8px}
-.fact p{margin:0 0 10px;color:var(--muted);max-width:30em}
-.scale{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0 6px}
-.scale span{font-family:var(--mono);border:1px solid var(--line);border-radius:6px;padding:4px 10px;background:#F7F8F5;font-size:.9rem}
-.scale span em{font-style:normal;color:var(--muted);font-size:.75rem;margin-left:4px}
-.mini{font:inherit;font-size:.88rem;background:transparent;border:1px solid var(--accent);color:var(--accent);border-radius:999px;padding:.35em 1em;cursor:pointer}
-.mini:hover{background:var(--accent);color:#fff}
-@media (max-width:860px){.facts{grid-template-columns:1fr}.fact,.fact+.fact{padding:22px 0;border-right:0;border-bottom:1px solid var(--line)}}
-
-.tech{margin-top:44px;display:grid;grid-template-columns:1fr 1fr;gap:40px}
-.tech h3{font-size:1.25rem;margin-bottom:12px}
-table{width:100%;border-collapse:collapse;font-size:.95rem}
-th,td{text-align:left;padding:10px 8px;border-bottom:1px solid var(--line);vertical-align:top}
-th{font-weight:500;color:var(--muted);font-size:.82rem;letter-spacing:.04em}
-td.zh{font-family:var(--display);font-size:1.35rem;width:4.4em;color:var(--accent);line-height:1.3}
-td.zh small{display:block;font-family:var(--latin);font-style:italic;font-size:.95rem;color:var(--muted)}
-@media (max-width:860px){.tech{grid-template-columns:1fr}}
-
-/* who */
-.who{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.card{background:#F7F8F5;border:1px solid var(--line);border-radius:10px;padding:24px;display:flex;flex-direction:column;gap:8px}
-.card .tag{font-family:var(--mono);font-size:.75rem;color:var(--accent);letter-spacing:.06em}
-.card h3{font-size:1.4rem}
-.card p{margin:0;color:var(--muted)}
-@media (max-width:860px){.who{grid-template-columns:1fr}}
-
-/* pricing */
-.price-table{border-top:2px solid var(--ink)}
-.price-row{display:grid;grid-template-columns:1.2fr 2fr auto;gap:24px;padding:20px 0;border-bottom:1px solid var(--line);align-items:baseline}
-.price-row h3{font-size:1.3rem}
-.price-row .sub{font-size:1rem;display:block}
-.price-row p{margin:0;color:var(--muted)}
-.price{font-family:var(--mono);font-size:1.35rem;font-variant-numeric:tabular-nums;white-space:nowrap;text-align:right}
-.price small{display:block;font-size:.75rem;color:var(--muted)}
-.price-row.feature{background:linear-gradient(90deg,rgba(43,102,112,.07),transparent 70%)}
-.pill{font-family:var(--body);font-size:.72rem;color:#fff;background:var(--accent);border-radius:999px;padding:2px 8px;margin-left:10px;vertical-align:middle;font-weight:500}
-.note{color:var(--muted);font-size:.88rem;margin-top:14px}
-@media (max-width:700px){.price-row{grid-template-columns:1fr auto}.price-row p{grid-column:1/-1;grid-row:2}}
-
-/* faq */
-.faq{max-width:760px}
-details{border-bottom:1px solid var(--line);padding:16px 0}
-summary{cursor:pointer;font-weight:500;list-style:none;display:flex;justify-content:space-between;gap:16px}
-summary::-webkit-details-marker{display:none}
-summary::after{content:"+";font-family:var(--mono);color:var(--accent)}
-details[open] summary::after{content:"−"}
-details p{margin:10px 0 0;color:var(--muted)}
-
-/* about + booking */
-.book-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:48px}
-.about p{color:var(--muted);margin:0 0 12px}
-.creds{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:2px solid var(--ink);border-bottom:1px solid var(--line);margin:18px 0 20px}
-.creds div{padding:12px 10px 12px 0;display:flex;flex-direction:column;font-size:.82rem;color:var(--muted);line-height:1.4}
-.creds div+div{padding-left:14px;border-left:1px solid var(--line)}
-.creds b{font-family:var(--mono);font-weight:500;font-size:2rem;color:var(--accent);line-height:1.1;font-variant-numeric:tabular-nums}
-.approach{list-style:none;margin:0;padding:0;display:grid;gap:12px}
-.approach li{color:var(--muted);padding-left:14px;border-left:2px solid var(--accent)}
-.approach li b{display:block;color:var(--ink);font-weight:500}
-.cred-line{font-family:var(--mono);font-size:.82rem;color:#9FC9C9;letter-spacing:.02em;margin-top:8px;display:block}
-.about .contact{margin-top:20px;font-family:var(--mono);font-size:.92rem;line-height:2}
-form{display:grid;gap:16px}
-label,.legend{font-size:.9rem;font-weight:500;display:block;margin-bottom:6px}
-input[type=text]{width:100%;font:inherit;padding:.65em .8em;border:1px solid var(--line);border-radius:8px;background:#fff;color:var(--ink)}
-input[type=text]:focus{outline:2px solid var(--accent);outline-offset:0;border-color:transparent}
-fieldset{border:0;margin:0;padding:0}
-.chips{display:flex;flex-wrap:wrap;gap:8px}
-.chips label{margin:0;font-weight:400}
-.chips input{position:absolute;opacity:0;width:1px;height:1px}
-.chips span.c{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:.4em 1em;cursor:pointer;background:#fff;font-size:.92rem}
-.chips input:checked+span.c{background:var(--ink);color:#fff;border-color:var(--ink)}
-.chips input:focus-visible+span.c{outline:2px solid var(--accent);outline-offset:2px}
-.submit{font:inherit;background:var(--accent);color:#fff;border:0;border-radius:999px;padding:.75em 1.6em;cursor:pointer;justify-self:start;font-weight:500}
-.submit:hover{filter:brightness(1.1)}
-.err{color:#A23B2A;font-size:.88rem;min-height:1.2em;margin:0}
-.out{display:none;border:1px solid var(--line);background:#fff;border-radius:10px;padding:18px}
-.out.show{display:block}
-.out pre{white-space:pre-wrap;font-family:var(--body);margin:0 0 12px;font-size:.95rem}
-.out .row{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
-.out .hint{font-size:.88rem;color:var(--muted)}
-@media (max-width:860px){.book-grid{grid-template-columns:1fr}}
-
-footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--muted);font-size:.85rem}
-footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
-
-@media (max-width:760px){
-  .hero-grid{grid-template-columns:1fr;gap:16px}
-  .vtitle{writing-mode:horizontal-tb;justify-self:start;font-size:clamp(38px,10vw,52px);letter-spacing:.06em}
-}
-</style>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<a class="skip-link" href="#main"><span class="t-zh">跳至主要内容</span><span class="t-en">Skip to content</span></a>
 
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="#top">筝课<small>Guzheng with Yvette</small></a>
+    <a class="brand" href="#top" aria-label="筝探 · Guzheng with Yvette"><span class="brand-seal" aria-hidden="true">筝</span><span class="brand-name">筝探<small>Guzheng with Yvette</small></span></a>
     <div class="top-right">
       <nav aria-label="Sections">
         <a href="#learn"><span class="t-zh">认识古筝</span><span class="t-en">The instrument</span></a>
-        <a href="#who"><span class="t-zh">适合谁</span><span class="t-en">Who it's for</span></a>
+
         <a href="#courses"><span class="t-zh">课程与价格</span><span class="t-en">Lessons &amp; prices</span></a>
         <a href="#faq"><span class="t-zh">常见问题</span><span class="t-en">FAQ</span></a>
-        <a href="#book"><span class="t-zh">预约</span><span class="t-en">Book</span></a>
+        <a class="nav-book" href="#book"><span class="t-zh">预约体验</span><span class="t-en">Book a lesson</span></a>
       </nav>
       <div class="lang" role="group" aria-label="Language / 语言">
         <button type="button" data-set="zh" aria-pressed="false">中文</button>
@@ -226,45 +46,43 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 </header>
 
 <div class="hero" id="top">
-  <div class="wrap hero-grid">
-    <h1 class="vtitle"><span class="t-zh">弹响<br><span class="hl">第一根弦</span></span><span class="t-en">Play your <span class="hl">first string.</span></span></h1>
-    <div class="stage">
-      <div class="hero-lede">
-        <p>
-          <span class="t-zh">在 UBC 校园附近，用古筝弹你喜欢的流行歌，每一首都学成完整的成品。有一对一、小班和体验课。先在下面这架 21 弦古筝上试一试：在<b>琴码右边</b>按住划过琴弦，就能听到声音。</span>
-          <span class="t-en">Learn the pop songs you love on the guzheng, near UBC, and take every song all the way to a finished piece. Private, small-group and trial lessons. Try the 21-string zheng below: <b>press and swipe across the strings to the right of the bridges</b> to hear it.</span>
-          <span class="sub"><span class="s-en">Pop songs on the guzheng, near UBC. Press and swipe across the strings to play.</span><span class="s-zh">在 UBC 用古筝弹流行歌 · 按住划过琴弦试一试</span></span>
-          <span class="cred-line"><span class="t-zh">4 岁习筝 · 11 岁考过中国音协九级（当时最高级）· 3 年教学经验 · 主打流行乐成品曲</span><span class="t-en">Playing since 4 · Grade 9 at 11, the top grade then · 3 years teaching · mainly pop songs, start to finish</span></span>
-        </p>
-        <a class="btn solid" href="#book"><span class="t-zh">预约体验课</span><span class="t-en">Book a trial lesson</span></a>
-      </div>
-    </div>
+  <div class="landscape" aria-hidden="true">
+    <svg viewBox="0 0 1440 540" preserveAspectRatio="xMidYMax slice"><defs><linearGradient id="mist" x1="0%" y1="0%" x2="0%" y2="100%"><stop stop-color="#84918a" stop-opacity=".14"/><stop offset="1" stop-color="#84918a" stop-opacity="0"/></linearGradient></defs>
+    <path d="M0 230Q36 215 64 192T104 184Q128 171 151 147T188 156Q210 181 231 155T265 120Q277 116 290 139T332 161Q352 152 371 170T416 218Q441 208 467 229T527 275Q571 244 611 270T687 294Q725 271 757 284T824 279Q853 255 884 223T927 235Q953 246 985 196T1033 167Q1057 189 1082 151T1137 112Q1163 92 1184 125T1213 144Q1242 130 1261 92T1291 101Q1320 145 1352 166T1400 152L1440 134V540H0Z" fill="url(#mist)"/>
+    <path d="M0 345Q60 288 123 320T253 309Q290 280 320 274T370 294Q403 276 443 316T530 337Q581 319 625 363T727 372Q780 348 813 358T907 327Q948 346 996 313T1064 292Q1091 302 1128 263T1183 276Q1215 296 1257 265T1312 258Q1366 282 1440 251V540H0Z" fill="#859285" opacity=".055"/>
+    <path d="m1064 199 17-18 15 8m102-16 14-15 12 9M97 263l15-11 12 6" fill="none" stroke="#617066" stroke-width="1.5" opacity=".3"/></svg>
   </div>
-  <div class="wrap wide stage stage-wide">
-      <div class="zheng">
-        <canvas id="zheng" tabindex="0"></canvas>
-      </div>
-      <div class="readout">
-        <span id="readout"></span>
-        <span><span class="t-zh">D 调定弦 · 第 1 弦在最下方</span><span class="t-en">Tuned in D · string 1 is at the bottom</span></span>
-      </div>
-      <div class="controls">
-        <button class="btn" id="demoTwinkle" type="button"><span class="t-zh">▶ 示范：《茉莉花》</span><span class="t-en">▶ Play “Jasmine Flower”</span></button>
-        <button class="btn" id="demoGliss" type="button"><span class="t-zh">▶ 听一听：刮奏</span><span class="t-en">▶ Hear a glissando</span></button>
-        <button class="btn" id="stopBtn" type="button"><span class="t-zh">停止</span><span class="t-en">Stop</span></button>
-      </div>
-      <div class="jianpu" id="jianpu" aria-label="《茉莉花》简谱 · Jasmine Flower in jianpu"></div>
+  <div class="wrap hero-intro">
+    <p class="eyebrow"><span class="t-zh">温哥华 · UBC 附近 · 中英双语古筝课</span><span class="t-en">Vancouver · Near UBC · Lessons in English &amp; Mandarin</span></p>
+    <h1><span class="t-zh">让喜欢的旋律，<br><span class="hl">在指尖生花。</span></span><span class="t-en">An ancient sound.<br><span class="hl">A song of your own.</span></span></h1>
+    <p class="hero-poem"><span class="t-zh">听一弦清音，留一刻给自己。</span><span class="t-en">A little stillness. A new way to make music.</span></p>
+    <p class="hero-description"><span class="t-zh">从第一声拨弦，弹到一首喜欢的歌。<br>和 Yvette 一起，慢慢找到自己的节奏。</span><span class="t-en">From your first note to a song you love.<br>Learn with Yvette, at your own pace, one beautiful phrase at a time.</span></p>
+    <div class="hero-actions"><a class="btn solid" href="#book"><span class="t-zh">预约一节体验课</span><span class="t-en">Book a trial lesson</span></a><a class="text-link" href="#instrument"><span class="play-icon" aria-hidden="true">▷</span><span class="t-zh">先听一曲</span><span class="t-en">Explore the sound</span></a></div>
+    <p class="hero-detail"><span class="t-zh">30 分钟 · $15 CAD · 提供古筝与义甲</span><span class="t-en">30 minutes · $15 CAD · Instrument &amp; picks provided</span></p>
   </div>
+  <div class="wrap instrument-section" id="instrument">
+    <div class="instrument-heading"><div><span class="small-seal" aria-hidden="true">听</span><h2><span class="t-zh">弦上初见</span><span class="t-en">Meet the strings</span></h2><span class="instrument-subtitle t-zh">轻拨一弦，听见古筝</span></div><span class="instrument-meta"><span class="t-zh">二十一弦 · D 调定弦</span><span class="t-en">21 strings · D tuning</span></span></div>
+    <p class="play-help" id="play-help"><span class="t-zh">在筝码右侧轻点或按住划过琴弦，即可弹奏。也可以听一段《茉莉花》。</span><span class="t-en">Tap or sweep the strings to the right of the bridges to play. Or listen to “Jasmine Flower” below.</span><span class="mobile-hint"><span class="t-zh">左右滑动可查看整架古筝。</span><span class="t-en">Swipe sideways to explore the whole instrument.</span></span></p>
+    <div class="instrument-scroll" tabindex="0" aria-label="古筝 / Guzheng"><div class="zheng"><canvas id="zheng" tabindex="0" aria-describedby="play-help"></canvas></div></div>
+    <div class="readout"><span id="readout" aria-live="off"></span><span><span class="t-zh">第 1 弦在最下方</span><span class="t-en">String 1 is at the bottom</span></span></div>
+    <div class="music-bar"><div class="controls">
+      <button class="btn demo-primary" id="demoTwinkle" type="button"><span aria-hidden="true">▷</span> <span class="t-zh">听《茉莉花》</span><span class="t-en">Jasmine Flower</span></button>
+      <button class="btn" id="demoGliss" type="button"><span class="t-zh">听一段刮奏</span><span class="t-en">Hear a glissando</span></button>
+      <button class="btn stop" id="stopBtn" type="button"><span aria-hidden="true">□</span> <span class="t-zh">停止</span><span class="t-en">Stop</span></button>
+    </div><span class="keyboard-hint"><span class="t-zh">聚焦琴面后，按空格键听示范</span><span class="t-en">Focus the instrument, then press Space to listen</span></span></div>
+    <details class="score-details"><summary><span class="t-zh">展开《茉莉花》简谱，跟着旋律读一读</span><span class="t-en">Follow along with the numbered score</span></summary><div class="jianpu" id="jianpu" aria-label="《茉莉花》简谱 · Jasmine Flower in jianpu"></div></details>
+  </div>
+  <div class="trust-line wrap"><span><span class="t-zh">4 岁起习筝</span><span class="t-en">Playing since age 4</span></span><span><span class="t-zh">中国音协古筝九级</span><span class="t-en">Chinese Musicians Association · Grade 9</span></span><span><span class="t-zh">3 年教学经验</span><span class="t-en">3 years of teaching</span></span></div>
 </div>
 
-<main>
+<main id="main">
 <section id="learn">
   <div class="wrap">
     <div class="sec-head">
-      <div class="num">01 · <span class="t-zh">认识古筝</span><span class="t-en">THE INSTRUMENT</span></div>
+      <div class="num"><span class="t-zh">认识古筝</span><span class="t-en">THE INSTRUMENT</span></div>
       <div>
-        <h2><span class="t-zh">上课前，先读懂这 21 根弦</span><span class="t-en">Before your first lesson, meet the 21 strings</span></h2>
-        <span class="sub"><span class="s-en">Three things every beginner learns in the first lesson</span><span class="s-zh">第一节课就会学到的三件事</span></span>
+        <h2><span class="t-zh">二十一弦，自有天地</span><span class="t-en">A world within twenty-one strings</span></h2>
+        <span class="sub"><span class="s-en">A first encounter with the guzheng</span><span class="s-zh">第一节课就会学到的三件事</span></span>
       </div>
     </div>
     <div class="facts">
@@ -274,12 +92,12 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         <div class="scale"><span>1<em>do</em></span><span>2<em>re</em></span><span>3<em>mi</em></span><span>5<em>sol</em></span><span>6<em>la</em></span></div>
       </div>
       <div class="fact">
-        <h3><span class="t-zh">彩色的弦用来定位</span><span class="t-en">Coloured strings are landmarks</span></h3>
+        <h3><span class="t-zh">以一抹青，辨一弦音</span><span class="t-en">Let the green strings guide you</span></h3>
         <p><span class="t-zh">第 3、8、13、18 弦通常是彩色的（常见绿色），它们都是 sol。看到彩色弦，就知道自己在哪个八度。</span><span class="t-en">Strings 3, 8, 13 and 18 are usually coloured (often green), and each one is sol. Spot a coloured string and you know which octave you are in.</span></p>
         <button class="mini" type="button" id="demoGreen"><span class="t-zh">▶ 依次弹响 4 根彩色弦</span><span class="t-en">▶ Play the 4 coloured strings</span></button>
       </div>
       <div class="fact">
-        <h3><span class="t-zh">没有 4 和 7 怎么办</span><span class="t-en">Where are 4 and 7?</span></h3>
+        <h3><span class="t-zh">弦外之音，藏在左手</span><span class="t-en">The notes between the strings</span></h3>
         <p><span class="t-zh">琴上没有 fa 和 si。左手在雁柱左边按下 3 弦，音就升高半音变成 4，这叫<b>按音</b>。很多流行歌里的 4 和 7 都是这样弹出来的。</span><span class="t-en">There is no fa or ti on the open strings. Press a 3 string to the left of its bridge and it rises a half step to 4. This is called <b>an’yin (pressed note)</b>, and it is how many pop songs get their 4s and 7s.</span></p>
         <button class="mini" type="button" id="demoPress"><span class="t-zh">▶ 听：3 → 按成 4</span><span class="t-en">▶ Hear 3 → pressed to 4</span></button>
       </div>
@@ -287,7 +105,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
     <div class="tech">
       <div>
-        <h3><span class="t-zh">右手：负责弹</span><span class="t-en">Right hand: plucking</span></h3>
+        <h3><span class="t-zh">右手拨弦，清音初起</span><span class="t-en">Right hand: plucking</span></h3>
         <table>
           <thead><tr><th><span class="t-zh">指法</span><span class="t-en">Technique</span></th><th><span class="t-zh">怎么弹</span><span class="t-en">How</span></th></tr></thead>
           <tbody>
@@ -301,7 +119,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         </table>
       </div>
       <div>
-        <h3><span class="t-zh">左手：负责“唱”</span><span class="t-en">Left hand: the singing voice</span></h3>
+        <h3><span class="t-zh">左手作韵，余音生情</span><span class="t-en">Left hand: the singing voice</span></h3>
         <table>
           <thead><tr><th><span class="t-zh">指法</span><span class="t-en">Technique</span></th><th><span class="t-zh">效果</span><span class="t-en">Effect</span></th></tr></thead>
           <tbody>
@@ -319,27 +137,27 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 <section id="who">
   <div class="wrap">
     <div class="sec-head">
-      <div class="num">02 · <span class="t-zh">适合谁</span><span class="t-en">WHO IT’S FOR</span></div>
+      <div class="num"><span class="t-zh">适合谁</span><span class="t-en">WHO IT’S FOR</span></div>
       <div>
-        <h2><span class="t-zh">不管你从哪里开始</span><span class="t-en">Wherever you are starting from</span></h2>
-        <span class="sub"><span class="s-en">Whoever you are, there is a starting point</span><span class="s-zh">不管你从哪里开始</span></span>
+        <h2><span class="t-zh">无论从何处开始，都能与筝相遇</span><span class="t-en">There is a place for you here</span></h2>
+        <span class="sub"><span class="s-en">A new beginning, or a welcome return</span><span class="s-zh">无论从何处开始，都能与筝相遇</span></span>
       </div>
     </div>
     <div class="who">
       <div class="card">
-        <div class="tag">RETURNING · 重拾</div>
-        <h3><span class="t-zh">小时候学过，想重新弹起来</span><span class="t-en">You played as a kid and want it back</span></h3>
-        <p><span class="t-zh">出国后没琴也没老师？这次可以不练考级曲，从你喜欢的流行歌开始，在歌里把手感找回来。学业压力大的时候，每周一小时专心弹琴就是最好的放松。</span><span class="t-en">No instrument and no teacher since you moved here? No need for exam pieces this time: we can start from pop songs you love and rebuild your touch inside them. One focused hour a week is a good break from coursework.</span></p>
+        <div class="card-mark" aria-hidden="true">归</div><div class="tag"><span class="t-zh">重拾琴声</span><span class="t-en">RETURNING TO MUSIC</span></div>
+        <h3><span class="t-zh">把久违的琴声，<br>找回来</span><span class="t-en">Find your way back to music</span></h3>
+        <p><span class="t-zh">曾经学过，后来暂时放下了？从一首熟悉的歌开始，慢慢找回指尖的记忆。每周留一点时间给琴声，也留给自己。</span><span class="t-en">If it has been a while, begin again with a song you know and love. We’ll rebuild your touch and confidence together, with a little space in the week just for music.</span></p>
       </div>
       <div class="card">
-        <div class="tag">NEW · 零基础</div>
-        <h3><span class="t-zh">对中国音乐好奇的你</span><span class="t-en">You are curious about Chinese music</span></h3>
-        <p><span class="t-zh">不需要会中文，也不需要会看五线谱。第一节课学会坐姿、戴义甲和看简谱，下课前就能弹出一段流行歌旋律。可以用英文上课。</span><span class="t-en">No Chinese and no staff notation needed. In the first lesson you learn posture, how to wear the finger picks and how to read jianpu, and you play a pop melody before you leave.</span></p>
+        <div class="card-mark" aria-hidden="true">初</div><div class="tag"><span class="t-zh">零基础入门</span><span class="t-en">YOUR FIRST NOTES</span></div>
+        <h3><span class="t-zh">从好奇开始，<br>让音乐靠近</span><span class="t-en">Follow your curiosity</span></h3>
+        <p><span class="t-zh">无需音乐基础，也不必会中文。从坐姿、义甲和简谱学起，在第一节课里尝试一段简单的旋律。普通话或英语，都能自在交流。</span><span class="t-en">No musical background or Mandarin needed. Learn how to sit, wear finger picks and read numbered notation, then try a simple melody. Lessons are available in English or Mandarin.</span></p>
       </div>
       <div class="card">
-        <div class="tag">KIDS · 少儿</div>
-        <h3><span class="t-zh">住在校园里的孩子</span><span class="t-en">Children living on campus</span></h3>
-        <p><span class="t-zh">适合 6 岁以上的孩子。每周固定时间，循序渐进，配合练习打卡，让家长看得见进步。</span><span class="t-en">For ages 6 and up. A fixed weekly time, step-by-step progress and a simple practice log so parents can see how it is going.</span></p>
+        <div class="card-mark" aria-hidden="true">芽</div><div class="tag"><span class="t-zh">少儿启蒙 · 6 岁起</span><span class="t-en">YOUNG MUSICIANS · AGES 6+</span></div>
+        <h3><span class="t-zh">让小小的手，<br>遇见大大的世界</span><span class="t-en">Small hands, new discoveries</span></h3>
+        <p><span class="t-zh">为 6 岁及以上的孩子，安排循序渐进的学习与简单的课后练习。从喜欢的旋律出发，让兴趣与专注一起生长。</span><span class="t-en">For children ages 6 and up, with a regular weekly lesson and manageable practice at home. Familiar melodies make room for curiosity, focus and steady progress.</span></p>
       </div>
     </div>
   </div>
@@ -348,30 +166,30 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 <section id="courses">
   <div class="wrap">
     <div class="sec-head">
-      <div class="num">03 · <span class="t-zh">课程与价格</span><span class="t-en">LESSONS &amp; PRICES</span></div>
+      <div class="num"><span class="t-zh">课程与价格</span><span class="t-en">LESSONS &amp; PRICES</span></div>
       <div>
-        <h2><span class="t-zh">先上一节体验课，再决定</span><span class="t-en">Try one lesson before you decide</span></h2>
-        <span class="sub"><span class="s-en">Try one lesson first. Prices in CAD.</span><span class="s-zh">先体验，再决定 · 价格以加元计</span></span>
+        <h2><span class="t-zh">先与古筝相处半小时</span><span class="t-en">Begin with a little time for music</span></h2>
+        <span class="sub"><span class="s-en">Thoughtful lessons, at your own pace · Prices in CAD</span><span class="s-zh">先体验，再决定 · 价格以加元计</span></span>
       </div>
     </div>
     <div class="price-table">
       <div class="price-row feature">
-        <div><h3><span class="t-zh">体验课</span><span class="t-en">Trial lesson</span><span class="pill"><span class="t-zh">推荐先上</span><span class="t-en">Start here</span></span></h3><span class="sub"><span class="s-en">Trial · 30 min</span><span class="s-zh">30 分钟</span></span></div>
-        <p><span class="t-zh">用老师的琴，学坐姿、戴义甲，弹出第一段流行歌旋律，再一起挑你想学成的第一首歌。义甲和胶布现场提供。</span><span class="t-en">Use my instrument to learn posture and finger picks, play your first pop melody, and choose the first song you want to finish. Picks and tape provided.</span></p>
+        <div><h3><span class="t-zh">体验课</span><span class="t-en">Trial lesson</span><span class="pill"><span class="t-zh">推荐先上</span><span class="t-en">Start here</span></span></h3><span class="sub"><span class="t-zh">30 分钟</span><span class="t-en">Trial · 30 min</span></span></div>
+        <p><span class="t-zh">用课堂提供的古筝，从坐姿与戴义甲学起，尝试一段简单的旋律。再一起聊聊，你最想弹会哪首歌。义甲与胶布均已备好。</span><span class="t-en">Get comfortable with the instrument, learn to wear finger picks and try your first melody. Then we’ll choose a song to work towards. Instrument, picks and tape are provided.</span></p>
         <div class="price">$15</div>
       </div>
       <div class="price-row">
-        <div><h3><span class="t-zh">一对一</span><span class="t-en">Private lesson</span></h3><span class="sub"><span class="s-en">Private · 60 min</span><span class="s-zh">60 分钟</span></span></div>
-        <p><span class="t-zh">你选一首流行歌，我编成适合你程度的古筝版，按你的节奏一路练到完整成品。</span><span class="t-en">Choose a pop song; I arrange it for your level and we work through it at your pace until it is a finished piece.</span></p>
+        <div><h3><span class="t-zh">一对一</span><span class="t-en">Private lesson</span></h3><span class="sub"><span class="t-zh">60 分钟</span><span class="t-en">Private · 60 min</span></span></div>
+        <p><span class="t-zh">选一首喜欢的流行歌，我为你改编成适合当前程度的古筝版本。按照你的节奏，逐步练成一段完整、流畅的演奏。</span><span class="t-en">Bring a pop song you love. I’ll arrange it for your level, and we’ll build the skills and confidence to play it from beginning to end.</span></p>
         <div class="price">$45<small><span class="t-zh">10 节课 $405</span><span class="t-en">10 lessons $405</span></small></div>
       </div>
       <div class="price-row">
-        <div><h3><span class="t-zh">少儿课</span><span class="t-en">Kids lesson</span></h3><span class="sub"><span class="s-en">Kids · 45 min</span><span class="s-zh">45 分钟</span></span></div>
+        <div><h3><span class="t-zh">少儿课</span><span class="t-en">Kids lesson</span></h3><span class="sub"><span class="t-zh">45 分钟</span><span class="t-en">Kids · 45 min</span></span></div>
         <p><span class="t-zh">从孩子喜欢的歌开始，每周固定时间，课后留简单练习。每学完一首都录一段完整演奏，让家长看到成果。</span><span class="t-en">Starting from songs your child loves, with a fixed weekly slot and short practice tasks. Each finished song gets a full recording so parents can see the result.</span></p>
         <div class="price">$38</div>
       </div>
       <div class="price-row">
-        <div><h3><span class="t-zh">小班工作坊</span><span class="t-en">Group workshop</span></h3><span class="sub"><span class="s-en">Group · 90 min · 3–4 people</span><span class="s-zh">90 分钟 · 3–4 人</span></span></div>
+        <div><h3><span class="t-zh">小班工作坊</span><span class="t-en">Group workshop</span></h3><span class="sub"><span class="t-zh">90 分钟 · 3–4 人</span><span class="t-en">Group · 90 min · 3–4 people</span></span></div>
         <p><span class="t-zh">和朋友一起学一首流行歌，结束时合奏一个完整版本。适合社团活动或者文化节表演前的集训。</span><span class="t-en">Learn one pop song together with friends and play a complete version as a group by the end. Good for club events or rehearsing before a cultural festival.</span></p>
         <div class="price">$25<small><span class="t-zh">每人</span><span class="t-en">per person</span></small></div>
       </div>
@@ -383,9 +201,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 <section id="faq">
   <div class="wrap">
     <div class="sec-head">
-      <div class="num">04 · <span class="t-zh">常见问题</span><span class="t-en">FAQ</span></div>
+      <div class="num"><span class="t-zh">常见问题</span><span class="t-en">FAQ</span></div>
       <div>
-        <h2><span class="t-zh">还在犹豫？先看看这些</span><span class="t-en">Still deciding? Start here</span></h2>
+        <h2><span class="t-zh">初次相遇，你也许想知道</span><span class="t-en">A few things you might be wondering</span></h2>
         <span class="sub"><span class="s-en">Questions students ask before their first lesson</span><span class="s-zh">第一节课前常被问到的问题</span></span>
       </div>
     </div>
@@ -421,25 +239,25 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 <section id="book">
   <div class="wrap">
     <div class="sec-head">
-      <div class="num">05 · <span class="t-zh">预约</span><span class="t-en">BOOK</span></div>
+      <div class="num"><span class="t-zh">预约</span><span class="t-en">BOOK</span></div>
       <div>
-        <h2><span class="t-zh">留下你的情况，我来安排时间</span><span class="t-en">Tell me a little about you, and I’ll find a time</span></h2>
-        <span class="sub"><span class="s-en">Book a trial lesson</span><span class="s-zh">预约体验课</span></span>
+        <h2><span class="t-zh">下一段旋律，从这里开始</span><span class="t-en">Your first melody starts here</span></h2>
+        <span class="sub"><span class="s-en">A note to begin with</span><span class="s-zh">留一封短笺，约一段琴声</span></span>
       </div>
     </div>
     <div class="book-grid">
       <div class="about">
         <h3 style="font-size:1.5rem;margin-bottom:10px"><span class="t-zh">关于老师</span><span class="t-en">About your teacher</span></h3>
-        <p><span class="t-zh">我是 Yvette，UBC 在读学生。4 岁开始学古筝，2009 年 11 岁时通过中国音乐家协会古筝九级考试，那是当时考级的最高级别（十级是后来才设立的）。我已经有三年教学经验。</span><span class="t-en">I’m Yvette, a student at UBC. I started the guzheng at 4 and passed the Chinese Musicians Association Grade 9 guzheng exam in 2009, at age 11. That was the highest grade offered at the time; Grade 10 was added later. I have three years of teaching experience.</span></p>
+        <p><span class="t-zh">我是 Yvette，一名 UBC 在读学生。4 岁起与古筝相伴，2009 年、11 岁时通过中国音乐家协会古筝九级考试，至今已有 3 年教学经验。我希望把这份与音乐相伴的快乐，也带进你的日常。</span><span class="t-en">I’m Yvette, a student at UBC. I began playing the guzheng at four and passed the Chinese Musicians Association Grade 9 exam in 2009, aged eleven. After three years of teaching, what I love most is helping someone make music a part of their everyday life.</span></p>
         <div class="creds">
           <div><b>4</b><span class="t-zh">岁开始学琴</span><span class="t-en">age I began</span></div>
-          <div><b>9</b><span class="t-zh">级 · 中国音协 · 2009 年当时最高级</span><span class="t-en">Chinese Musicians Association · top grade in 2009</span></div>
+          <div><b>9</b><span class="t-zh">级 · 中国音协 · 2009 年</span><span class="t-en">Chinese Musicians Association · 2009</span></div>
           <div><b>3</b><span class="t-zh">年教学经验</span><span class="t-en">years teaching</span></div>
         </div>
         <ul class="approach">
-          <li><b><span class="t-zh">主要教流行乐</span><span class="t-en">Mainly pop songs</span></b><span class="t-zh">你选歌，我按你的程度编成古筝版。需要的基本功，就在这首歌里练。</span><span class="t-en">You pick the song and I arrange it for your level. The technique you need is practised inside the song itself.</span></li>
-          <li><b><span class="t-zh">每首都学成成品</span><span class="t-en">A finished piece, every time</span></b><span class="t-zh">不只练片段。每首歌都弹到完整、流畅，可以录成视频，也可以上台表演。</span><span class="t-en">Not just fragments: every song is played complete and fluent, ready to record or perform.</span></li>
-          <li><b><span class="t-zh">按你的节奏来</span><span class="t-en">Your pace</span></b><span class="t-zh">根据你的基础、时间和目标安排进度，不赶也不拖。</span><span class="t-en">Pacing set around your background, schedule and goals: never rushed, never stalled.</span></li>
+          <li><b><span class="t-zh">从你喜欢的歌开始</span><span class="t-en">Songs you already love</span></b><span class="t-zh">你选歌，我按你的程度编成古筝版。需要的基本功，就在这首歌里练。</span><span class="t-en">You pick the song and I arrange it for your level. The technique you need is practised inside the song itself.</span></li>
+          <li><b><span class="t-zh">让一首歌，成为你的作品</span><span class="t-en">A whole song to make your own</span></b><span class="t-zh">一起打磨完整的旋律与表达，让一首歌从练习走向流畅的演奏，留作记录，或与人分享。</span><span class="t-en">We work on the whole piece, shaping the phrasing and flow until it is something you can record, perform or simply enjoy.</span></li>
+          <li><b><span class="t-zh">按你的节奏来</span><span class="t-en">Your pace</span></b><span class="t-zh">根据你的基础、时间和目标安排进度，不赶也不拖。</span><span class="t-en">Lessons shaped around your experience, schedule and goals, with time to enjoy the process.</span></li>
         </ul>
         <div class="contact">
           <span class="t-zh">邮箱</span><span class="t-en">Email</span>: <a href="mailto:yvettewu2017@gmail.com">yvettewu2017@gmail.com</a><br>
@@ -448,18 +266,20 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       </div>
       <div>
         <form id="bookForm" novalidate>
-          <div><label for="f-name"><span class="t-zh">怎么称呼你</span><span class="t-en">Your name</span></label><input type="text" id="f-name" autocomplete="name"></div>
+          <div class="form-heading"><span class="small-seal" aria-hidden="true">约</span><h3><span class="t-zh">与琴声有约</span><span class="t-en">Let’s make music</span></h3></div>
+          <p class="form-note"><span class="t-zh">填写后可生成预约邮件，由你确认发送。</span><span class="t-en">Prepare a booking email below, then send it when you’re ready.</span></p>
+          <div><label for="f-name"><span class="t-zh">怎么称呼你</span><span class="t-en">Your name</span></label><input type="text" id="f-name" autocomplete="name" required aria-describedby="err"></div>
           <fieldset>
-            <div class="legend"><span class="t-zh">你的情况</span><span class="t-en">Your experience</span></div>
-            <div class="chips" role="radiogroup">
+            <legend class="legend"><span class="t-zh">你的情况</span><span class="t-en">Your experience</span></legend>
+            <div class="chips">
               <label><input type="radio" name="who" id="w1" value="new" checked><span class="c"><span class="t-zh">零基础</span><span class="t-en">Complete beginner</span></span></label>
               <label><input type="radio" name="who" id="w2" value="returning"><span class="c"><span class="t-zh">学过，想重拾</span><span class="t-en">Played before</span></span></label>
               <label><input type="radio" name="who" id="w3" value="kid"><span class="c"><span class="t-zh">给孩子报名</span><span class="t-en">For my child</span></span></label>
             </div>
           </fieldset>
           <fieldset>
-            <div class="legend"><span class="t-zh">想上的课</span><span class="t-en">Lesson type</span></div>
-            <div class="chips" role="radiogroup">
+            <legend class="legend"><span class="t-zh">想上的课</span><span class="t-en">Lesson type</span></legend>
+            <div class="chips">
               <label><input type="radio" name="fmt" id="c1" value="trial" checked><span class="c"><span class="t-zh">体验课</span><span class="t-en">Trial</span></span></label>
               <label><input type="radio" name="fmt" id="c2" value="private"><span class="c"><span class="t-zh">一对一</span><span class="t-en">Private</span></span></label>
               <label><input type="radio" name="fmt" id="c3" value="kids"><span class="c"><span class="t-zh">少儿课</span><span class="t-en">Kids</span></span></label>
@@ -467,9 +287,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
             </div>
           </fieldset>
           <div><label for="f-time"><span class="t-zh">方便的时间</span><span class="t-en">Times that work for you</span></label><input type="text" id="f-time"></div>
-          <div><label for="f-contact"><span class="t-zh">你的邮箱或电话</span><span class="t-en">Your email or phone</span></label><input type="text" id="f-contact" autocomplete="email"></div>
+          <div><label for="f-contact"><span class="t-zh">你的邮箱或电话</span><span class="t-en">Your email or phone</span></label><input type="text" id="f-contact" autocomplete="email" required aria-describedby="err"></div>
           <p class="err" id="err" role="alert"></p>
-          <button class="submit" type="submit"><span class="t-zh">生成预约信息</span><span class="t-en">Create booking message</span></button>
+          <button class="submit" type="submit"><span class="t-zh">写好预约短笺</span><span class="t-en">Prepare my booking message</span></button>
         </form>
         <div class="out" id="out" aria-live="polite">
           <pre id="msg"></pre>
@@ -487,7 +307,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
 <footer>
   <div class="wrap">
-    <span>© 2026 筝课 · Guzheng with Yvette · Vancouver</span>
+    <span class="footer-brand">© 2026 筝探 · Guzheng with Yvette · Vancouver</span>
     <span><span class="t-zh">古筝采样来自</span><span class="t-en">Guzheng samples from</span> <a href="https://github.com/LenweSaralonde/MusicianExtended">Musician: Extended</a>（LenweSaralonde，GPL-3.0）</span>
   </div>
 </footer>
@@ -501,8 +321,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   // ---------- strings that scripts write ----------
   const T = {
     zh: {
-      canvas: "可以弹奏的 21 弦古筝。按住并在琴弦上划过即可发声，也可以用下方按钮听示范。",
-      idle: "把鼠标移到琴弦上，看看每根弦的音",
+      canvas: "可以弹奏的 21 弦古筝。在筝码右侧轻点或划过琴弦即可发声；按空格或回车键播放示范。",
+      idle: "轻触琴弦，听一声清音",
       str: n => "第 <b>" + n + "</b> 弦",
       oct: { "0":"中音", "1":"高音", "-1":"低音" },
       marked: " · 彩色弦",
@@ -513,14 +333,14 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       who: { new:"零基础", returning:"学过，想重拾", kid:"给孩子报名" },
       fmt: { trial:"体验课", private:"一对一", kids:"少儿课", group:"小班工作坊" },
       msg: (n,w,f,t,c) => "你好！我想预约古筝课。\n称呼：" + n + "\n情况：" + w + "\n想上的课：" + f + "\n方便的时间：" + (t || "都可以，请你安排") + "\n联系方式：" + c,
-      hint: "点“用邮件发送”，或者复制后发到 yvettewu2017@gmail.com，我会在 24 小时内回复你。",
+      hint: "预约信息已准备好，尚未发送。请点击“用邮件发送”，或复制后发到 yvettewu2017@gmail.com。我会在 24 小时内回复。",
       subject: "预约古筝课",
-      copied: "已复制。现在把它发给我就好。",
+      copied: "已复制，请通过邮件发给我。",
       manual: "文字已选中，请手动复制。"
     },
     en: {
-      canvas: "A playable 21-string guzheng. Press and swipe across the strings to play, or use the demo buttons below.",
-      idle: "Hover over a string to see its note",
+      canvas: "A playable 21-string guzheng. Tap or sweep the strings to the right of the bridges, or press Space or Enter to hear a demonstration.",
+      idle: "Touch a string. Discover its voice.",
       str: n => "String <b>" + n + "</b>",
       oct: { "0":"middle", "1":"high", "-1":"low" },
       marked: " · coloured string",
@@ -531,9 +351,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       who: { new:"Complete beginner", returning:"Played before, coming back", kid:"Booking for my child" },
       fmt: { trial:"Trial lesson", private:"Private lesson", kids:"Kids lesson", group:"Group workshop" },
       msg: (n,w,f,t,c) => "Hi! I'd like to book a guzheng lesson.\nName: " + n + "\nExperience: " + w + "\nLesson: " + f + "\nTimes: " + (t || "Flexible") + "\nContact: " + c,
-      hint: "Tap “Send by email”, or copy it and send it to yvettewu2017@gmail.com. I reply within 24 hours.",
+      hint: "Your message is ready, but has not been sent. Choose “Send by email” or copy it to yvettewu2017@gmail.com. I reply within 24 hours.",
       subject: "Guzheng lesson booking",
-      copied: "Copied. Now just send it to me.",
+      copied: "Copied. Send it to me by email when you’re ready.",
       manual: "The text is selected. Please copy it manually."
     }
   };
@@ -562,13 +382,13 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   for (let i = 0; i < 46; i++) grain.push({ y: rnd(), a: rnd()*0.018 + 0.004, f: rnd()*3 + 1, p: rnd()*6.28, o: rnd()*0.08 + 0.03 });
 
   // Instrument look: dark rosewood body, wine-red frame, S-curved head with a painted orchid panel on beige silk
-  const C = { frame:"#3B1218", frameHi:"#5C2128", wood0:"#86553D", wood1:"#764631", wood2:"#633826", silk0:"#F1E6D6", silk1:"#E6D4BE", leaf:"rgba(128,150,110,.85)", leafDk:"rgba(92,116,82,.85)", petal:"#FDFAF3", seal:"#A8382B" };
+  const C = { frame:"#422e26", frameHi:"#735044", wood0:"#a7774e", wood1:"#bd8c59", wood2:"#81583c", silk0:"#eae0c6", silk1:"#c8bb96", leaf:"rgba(54,77,51,.8)", leafDk:"rgba(33,56,42,.9)", petal:"#f6eedb", seal:"#9f4938" };
   const bg = document.createElement("canvas"), bctx = bg.getContext("2d");
 
   function geometry(){
-    const bx0 = W*0.012, bx1 = W*0.988, by0 = H*0.04, by1 = H*0.96, tap = H*0.012;
+    const bx0 = W*0.025, bx1 = W*0.975, by0 = H*0.08, by1 = H*0.89, tap = H*0.035;
     const yL = bx0 + Math.max(W*0.085, 40), yR = bx1 - Math.max(W*0.22, 96);
-    const top = H*0.12, bot = H*0.88, A = Math.max(W*0.15, 62), band = Math.max(W*0.02, 22);
+    const top = H*0.16, bot = H*0.82, A = W*0.125, band = Math.max(W*0.019, 19);
     const y = n => top + (N - n) / (N - 1) * (bot - top);
     const nutX = yy => { const u = Math.min(1, Math.max(0, (yy - top) / (bot - top))); return yR + A * (0.5 - 0.5 * Math.cos(Math.PI * u)); }; // S-shaped front 岳山
     const bridge = n => { const t = (n - 1)/(N - 1); return yL + (yR - yL) * (0.12 + 0.5*t + 0.06*t*t); }; // high strings: bridge close to the plucking 岳山, so the plucking area forms an inverted trapezoid
@@ -577,11 +397,13 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   function resize(){
     const r = cv.parentElement.getBoundingClientRect();
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
-    W = r.width; H = Math.max(290, Math.min(420, W * 0.3));
+    W = r.width; H = Math.max(300, Math.min(395, W * 0.34));
     cv.style.height = H + "px";
     cv.width = bg.width = Math.round(W * dpr); cv.height = bg.height = Math.round(H * dpr);
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0); bctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     G = geometry(); drawStatic(bctx); draw();
+    const scroller = cv.closest(".instrument-scroll");
+    if (scroller && !scroller.dataset.positioned && scroller.scrollWidth > scroller.clientWidth) { scroller.scrollLeft = (scroller.scrollWidth - scroller.clientWidth) * 0.8; scroller.dataset.positioned = "true"; }
   }
   function roundRect(c, x, y, w, h, r){ c.beginPath(); c.moveTo(x+r, y); c.arcTo(x+w, y, x+w, y+h, r); c.arcTo(x+w, y+h, x, y+h, r); c.arcTo(x, y+h, x, y, r); c.arcTo(x, y, x+w, y, r); c.closePath(); }
   function bodyPath(c, inset){
@@ -673,24 +495,30 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     const g = G; c.clearRect(0, 0, W, H);
     c.save(); c.translate(W, 0); c.scale(-1, 1); // mirrored: head on the left, string 1 at the bottom
     // frame (wine-red rosewood) with shadow
-    c.save(); c.shadowColor = "rgba(0,0,0,.55)"; c.shadowBlur = 24; c.shadowOffsetY = 10;
+    c.save(); c.shadowColor = "rgba(44,49,29,.26)"; c.shadowBlur = 22; c.shadowOffsetY = 14;
     bodyPath(c, 0); const fr = c.createLinearGradient(0, g.by0, 0, g.by1);
-    fr.addColorStop(0, C.frameHi); fr.addColorStop(0.5, C.frame); fr.addColorStop(1, "#250B0B");
+    fr.addColorStop(0, C.frameHi); fr.addColorStop(0.18, C.frame); fr.addColorStop(0.78, "#503629"); fr.addColorStop(1, "#241b17");
     c.fillStyle = fr; c.fill(); c.restore();
+    // The lower rim makes the rounded soundboard sit above a real wooden case.
+    c.save(); c.translate(0, 7); bodyPath(c, 1);
+    const rim = c.createLinearGradient(0, g.by0, 0, g.by1 + 8);
+    rim.addColorStop(0, "#634231"); rim.addColorStop(1, "#30271f");
+    c.fillStyle = rim; c.fill(); c.strokeStyle = "#977456"; c.lineWidth = 1; c.stroke(); c.restore();
+    bodyPath(c, 0); c.fillStyle = fr; c.fill();
     // soundboard
-    bodyPath(c, 5);
+    bodyPath(c, 7);
     const sb = c.createLinearGradient(0, g.by0, 0, g.by1);
-    sb.addColorStop(0, C.wood0); sb.addColorStop(0.5, C.wood1); sb.addColorStop(1, C.wood2);
+    sb.addColorStop(0, C.wood2); sb.addColorStop(0.13, C.wood0); sb.addColorStop(0.45, C.wood1); sb.addColorStop(0.78, "#a6794f"); sb.addColorStop(1, C.wood2);
     c.fillStyle = sb; c.fill();
-    c.save(); bodyPath(c, 5); c.clip();
+    c.save(); bodyPath(c, 7); c.clip();
     // straight dense grain along the strings
     let s2 = 11; const r2 = () => { s2 = (s2 * 16807) % 2147483647; return s2 / 2147483647; };
-    for (let i = 0; i < 150; i++){
-      const yy = g.by0 + r2() * (g.by1 - g.by0), wob = r2() * 1.6, f = 1 + r2() * 2, ph = r2() * 6.28;
+    for (let i = 0; i < 320; i++){
+      const yy = g.by0 + r2() * (g.by1 - g.by0), wob = r2() * 2.2, f = 1 + r2() * 2, ph = r2() * 6.28;
       c.beginPath();
       for (let x = g.bx0; x <= g.bx1; x += 14){ const y2 = yy + Math.sin(x / W * f * 6.28 + ph) * wob; x === g.bx0 ? c.moveTo(x, y2) : c.lineTo(x, y2); }
       c.strokeStyle = i % 3 ? "rgba(40,16,8," + (0.08 + r2()*0.12) + ")" : "rgba(200,140,100," + (0.03 + r2()*0.05) + ")";
-      c.lineWidth = 0.6 + r2() * 0.8; c.stroke();
+      c.lineWidth = 0.3 + r2() * 0.55; c.stroke();
     }
     // soft sheen down the middle
     const sh = c.createLinearGradient(0, g.by0, 0, g.by1);
@@ -707,9 +535,25 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     silk.addColorStop(0, C.silk0); silk.addColorStop(1, C.silk1);
     c.fillStyle = silk; c.fillRect(g.yR, g.by0, g.bx1 - g.yR + 10, g.by1 - g.by0);
     const headLen = g.bx1 - g.yR - g.band;
-    const oy = g.by0 + (g.by1 - g.by0)*0.34;
-    orchidFan(c, g.yR + g.band + headLen*0.12, oy, headLen*0.95, 29);
-    seal(c, g.bx1 - Math.max(16, headLen*0.12), g.by0 + (g.by1 - g.by0)*0.1, Math.max(8, headLen*0.07));
+    const oy = g.by0 + (g.by1 - g.by0)*0.49;
+    // Fine silk fibres behind the ink painting.
+    for(let i=0;i<70;i++){
+      const yy=g.by0+i*(g.by1-g.by0)/70;
+      c.beginPath(); c.moveTo(g.yR,yy); c.lineTo(g.bx1,yy);
+      c.strokeStyle=i%3?"rgba(78,65,39,.035)":"rgba(255,249,226,.13)"; c.lineWidth=.6; c.stroke();
+    }
+    orchidFan(c, g.yR + g.band + headLen*0.11, oy, headLen*0.87, 29);
+    // Small rock washes ground the orchid without obscuring the woodwork.
+    for(let i=0;i<4;i++){
+      c.beginPath(); c.ellipse(g.yR+g.band+headLen*(.16+i*.055),oy+headLen*.04,headLen*.09,headLen*(.045+i*.006),i*.3,0,Math.PI*2);
+      c.fillStyle="rgba(66,76,50,.07)"; c.fill();
+    }
+    // Lettering is counter-mirrored so it remains readable on the left head.
+    c.save(); c.translate(g.bx1-headLen*.18, g.by0+H*.16); c.scale(-1,1);
+    c.fillStyle="rgba(55,67,45,.8)"; c.font=Math.max(13,W*.017)+"px 'ZCOOL XiaoWei', serif"; c.textAlign="center";
+    ["幽","兰"].forEach((ch,i)=>c.fillText(ch,0,i*Math.max(19,W*.024)));
+    c.restore();
+    seal(c, g.bx1 - headLen*.22, g.by0 + H*.31, Math.max(9, headLen*.07));
     c.restore();
     // S-shaped front 岳山: a broad wine-red band with a light bone edge where the strings rest
     const sPath = off => { c.beginPath(); for (let yy = g.by0 + 2; yy <= g.by1 - 2; yy += 3){ const x = g.nutX(yy) + off; yy === g.by0 + 2 ? c.moveTo(x, yy) : c.lineTo(x, yy); } };
@@ -736,52 +580,70 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     c.fillStyle = C.frame; c.fillRect(g.yL - 9, g.top - 18, 9, g.bot - g.top + 36);
     c.fillStyle = "#E3D6BA"; c.fillRect(g.yL - 1.5, g.top - 18, 2.5, g.bot - g.top + 36);
     c.restore();
-    // frame lip
-    bodyPath(c, 5); c.strokeStyle = "rgba(0,0,0,.45)"; c.lineWidth = 1.2; c.stroke();
+    // Two fine inlaid edges and a subtle waxed highlight.
+    bodyPath(c, 3); c.strokeStyle = "rgba(211,177,121,.62)"; c.lineWidth = .8; c.stroke();
+    bodyPath(c, 7); c.strokeStyle = "rgba(34,27,17,.45)"; c.lineWidth = 1.3; c.stroke();
+    bodyPath(c, 9); c.strokeStyle = "rgba(245,220,172,.24)"; c.lineWidth = .6; c.stroke();
     c.restore();
   }
 
+  function drawBridge(c, x, y, spacing){
+    const r = Math.min(6, spacing * .46);
+    c.save();
+    c.shadowColor = "rgba(24,19,13,.5)"; c.shadowBlur = 3; c.shadowOffsetX = 3; c.shadowOffsetY = 4;
+    c.beginPath(); c.moveTo(x, y - 1); c.lineTo(x - r, y + r * 1.15);
+    c.lineTo(x - r*.45, y + r * 1.15); c.quadraticCurveTo(x, y + r*.28, x + r*.45, y + r*1.15);
+    c.lineTo(x + r, y + r * 1.15); c.closePath();
+    const wood = c.createLinearGradient(x-r,y,x+r,y+r);
+    wood.addColorStop(0,"#76513a"); wood.addColorStop(.44,"#33281d"); wood.addColorStop(1,"#1d1b15");
+    c.fillStyle = wood; c.fill(); c.shadowBlur=0; c.shadowOffsetX=0; c.shadowOffsetY=0;
+    c.beginPath(); c.moveTo(x-r,y+r); c.lineTo(x,y-1); c.strokeStyle="#ad8760"; c.lineWidth=.7; c.stroke();
+    c.beginPath(); c.moveTo(x-1.7,y); c.lineTo(x+1.7,y); c.strokeStyle="#f4e5bf"; c.lineWidth=2; c.lineCap="round"; c.stroke();
+    c.restore();
+  }
   function draw(){
-    const g = G; ctx.clearRect(0, 0, W, H);
-    ctx.drawImage(bg, 0, 0, W, H);
+    const g = G; ctx.clearRect(0, 0, W, H); ctx.drawImage(bg, 0, 0, W, H);
     const labels = [];
     ctx.save(); ctx.translate(W, 0); ctx.scale(-1, 1);
     for (let n = N; n >= 1; n--){
-      const y = g.y(n), bx = g.bridge(n), nt = notes[n], ex = g.nutX(y);
-      const thick = 0.75 + (n - 1) / (N - 1) * 1.7;
-      const col = nt.marked ? "#7FC29A" : "#E9E7E0";
-      ctx.lineCap = "butt";
-      ctx.beginPath(); ctx.moveTo(bx, y); ctx.lineTo(ex, y);
-      ctx.strokeStyle = col; ctx.globalAlpha = 0.85; ctx.lineWidth = thick; ctx.stroke(); ctx.globalAlpha = 1;
-      // dark rosewood 雁柱 with an ivory inlay under the string
-      ctx.fillStyle = "rgba(0,0,0,.45)"; roundRect(ctx, bx - 4, y - 6, 10, 14, 1.5); ctx.fill();
-      ctx.fillStyle = "#2B1110"; roundRect(ctx, bx - 5, y - 7, 10, 14, 1.5); ctx.fill();
-      ctx.fillStyle = "rgba(255,210,180,.12)"; ctx.fillRect(bx - 5, y - 7, 10, 2);
-      ctx.beginPath(); ctx.ellipse(bx, y, 1.6, 2.6, 0, 0, 6.29); ctx.fillStyle = "#F2EADA"; ctx.fill();
-      const a = amp[n];
-      if (n === hover){ ctx.shadowColor = "rgba(159,201,201,.95)"; ctx.shadowBlur = 10; }
-      // vibrating string: a soft blur envelope that stays inside its own lane
-      if (a > 0.05){
-        ctx.beginPath(); ctx.moveTo(g.yL, y);
-        for (let i = 1; i <= 24; i++){ const u = i / 24; ctx.lineTo(g.yL + (bx - g.yL) * u, y - a * Math.sin(Math.PI * u)); }
-        for (let i = 24; i >= 0; i--){ const u = i / 24; ctx.lineTo(g.yL + (bx - g.yL) * u, y + a * Math.sin(Math.PI * u)); }
-        ctx.closePath(); ctx.fillStyle = col; ctx.globalAlpha = 0.22 + 0.25 * Math.min(1, a / 3); ctx.fill(); ctx.globalAlpha = 1;
+      const y = g.y(n), bx = g.bridge(n), nt = notes[n], ex = g.nutX(y), a = amp[n];
+      const thick = .55 + (n-1)/(N-1)*1.05;
+      const col = nt.marked ? "#547e5c" : "#ede1c3";
+      // Each string casts a fine shadow on the curved soundboard.
+      ctx.beginPath(); ctx.moveTo(g.yL,y+2.2); ctx.lineTo(ex,y+2.2);
+      ctx.strokeStyle="rgba(44,31,15,.23)"; ctx.lineWidth=thick+.5; ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(bx,y); ctx.lineTo(ex,y);
+      ctx.strokeStyle=nt.marked?"#628363":"#d2c4a6"; ctx.lineWidth=thick; ctx.stroke();
+      drawBridge(ctx,bx,y,g.gap);
+      if(a>.05){
+        ctx.beginPath(); ctx.moveTo(g.yL,y);
+        for(let i=1;i<=32;i++){const u=i/32;ctx.lineTo(g.yL+(bx-g.yL)*u,y-a*Math.sin(Math.PI*u));}
+        for(let i=32;i>=0;i--){const u=i/32;ctx.lineTo(g.yL+(bx-g.yL)*u,y+a*Math.sin(Math.PI*u));}
+        ctx.closePath(); ctx.fillStyle=nt.marked?"rgba(177,212,153,.35)":"rgba(255,245,200,.3)";ctx.fill();
       }
-      ctx.beginPath(); ctx.moveTo(g.yL, y); ctx.lineTo(bx, y);
-      ctx.strokeStyle = n === hover || a > 0.05 ? "#FFFFFF" : col; ctx.lineWidth = thick; ctx.stroke();
-      ctx.shadowBlur = 0;
-      labels.push({ n, x: W - (ex + g.band * 0.5), y });
+      ctx.beginPath(); ctx.moveTo(g.yL,y);
+      for(let i=1;i<=30;i++){
+        const u=i/30;
+        const wave=reduce?0:a*.4*Math.sin(Math.PI*u)*Math.sin(phase[n]+u*18);
+        ctx.lineTo(g.yL+(bx-g.yL)*u,y+wave);
+      }
+      ctx.strokeStyle=n===hover||a>.05?"#fff7d9":col; ctx.lineWidth=thick;
+      if(n===hover){ctx.shadowColor="#eee6bc";ctx.shadowBlur=6;}
+      ctx.stroke();ctx.shadowBlur=0;
+      // The bright central winding makes the bass strings read as metal, not lines.
+      if(n>12){ctx.globalAlpha=.36;ctx.lineWidth=.35;ctx.strokeStyle="#fff9e5";ctx.stroke();ctx.globalAlpha=1;}
+      ctx.beginPath();ctx.ellipse(g.yL-5,y,2.6,1.7,0,0,Math.PI*2);ctx.fillStyle="#b69a69";ctx.fill();
+      ctx.beginPath();ctx.moveTo(g.yL-7,y-.6);ctx.lineTo(g.yL-3,y-.6);ctx.strokeStyle="#f4dca9";ctx.lineWidth=.6;ctx.stroke();
+      labels.push({n,x:W-(ex+g.band*.5),y});
     }
     ctx.restore();
-    // jianpu labels on the S-shaped band, kept upright
-    ctx.font = "500 " + Math.max(10, Math.min(13, g.gap * 0.85)) + "px 'IBM Plex Mono', monospace";
-    ctx.textAlign = "center"; ctx.textBaseline = "middle";
-    labels.forEach(L0 => {
-      const nt = notes[L0.n];
-      ctx.fillStyle = L0.n === hover ? "#FFFFFF" : (nt.marked ? "#9ED8B2" : "rgba(240,226,200,.9)");
-      ctx.fillText(String(nt.deg), L0.x - 3, L0.y);
-      const dots = Math.abs(nt.dots), dir = nt.dots > 0 ? -1 : 1;
-      for (let d = 0; d < dots; d++){ ctx.beginPath(); ctx.arc(L0.x + 5, L0.y + dir * (3.5 + d * 3.6), 1.2, 0, 6.29); ctx.fill(); }
+    ctx.font="500 "+Math.max(9,Math.min(12,g.gap*.86))+"px 'IBM Plex Mono',monospace";
+    ctx.textAlign="center";ctx.textBaseline="middle";
+    labels.forEach(label=>{
+      const nt=notes[label.n];ctx.fillStyle=label.n===hover?"#fff9de":nt.marked?"#b9cf9b":"#e5d5ae";
+      ctx.fillText(String(nt.deg),label.x-2,label.y);
+      const dots=Math.abs(nt.dots),dir=nt.dots>0?-1:1;
+      for(let d=0;d<dots;d++){ctx.beginPath();ctx.arc(label.x+5,label.y+dir*(2.8+d*2.7),.85,0,Math.PI*2);ctx.fill();}
     });
   }
 
@@ -996,6 +858,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   function applyLang(l){
     root.setAttribute("data-lang", l);
     root.lang = l === "zh" ? "zh-CN" : "en";
+    document.title = l === "zh" ? "筝探 · Guzheng with Yvette | UBC 古筝课" : "ZhengTan · Guzheng with Yvette | Lessons near UBC";
     try { localStorage.setItem("zheng-lang", l); } catch(e){}
     langBtns.forEach(b => b.setAttribute("aria-pressed", String(b.dataset.set === l)));
     cv.setAttribute("aria-label", L().canvas);
